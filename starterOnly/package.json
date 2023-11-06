@@ -1,0 +1,16 @@
+{
+  "name": "project_4",
+  "version": "1.0.0",
+  "description": "Game on web site-fr",
+  "main": "index.js",
+  "dependencies": {
+    "xyz": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "sass": "sass  sass/modal.scss:css/modal.css --no-source-map -w",
+    "comp": "sass  sass/modal.scss:css/modal.css --style=compressed --no-source-map -w"
+  },
+  "author": "",
+  "license": "ISC"
+}
