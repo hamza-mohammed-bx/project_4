@@ -1,4 +1,8 @@
-body{
-    margin: 0;
-    padding: 0;
-}
+@use'./reset';
+@use'./landing';
+@use'./form';
+@use'./mixins';
+@use'./header';
+@use'./footer';
+@use'./animations';
+@use'./btn';
