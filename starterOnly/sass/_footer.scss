@@ -16,9 +16,22 @@ footer {
   }
 }
 
-@media screen and (max-width: 800px) {
-  .copyrights {
-    margin-top: 50px;
+
+@media screen and (max-width: 1180px){
+  
+}
+
+@media screen and (max-width: 768px){
+  main{
+    margin: 0;
+    padding: 0;
+  }
+  
+}
+@media screen and (max-width: 540px) {
+  .copyrights{
+    font-size: 12px !important;
     text-align: center;
   }
+  
 }

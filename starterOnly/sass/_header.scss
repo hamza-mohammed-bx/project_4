@@ -2,7 +2,7 @@
 .topnav {
   overflow: hidden;
   margin: 3.5%;
-  a {
+  .element{
     float: left;
     display: block;
     color: #000000;
@@ -14,12 +14,7 @@
     &:hover{
       background-color: #ff0000;
       color: #ffffff;
-      border-radius: 15px;
-    }
-    &:active  .icon {
-      background-color: green;
-      color: #ffffff;
-      border-radius: 15px;
+      border-radius: 5px;
     }
   }
   .header-logo {
@@ -29,79 +24,73 @@
     display: none;
   }
   .main-navbar {
+    display: flex !important;
     float: right;
   }
-  
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1180px){
+  body{
+    padding: 0 30px;
+    border: 2px solid green;
+  }
   .topnav {
-    margin: 6% 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    a{
-    display: none;
-      &.icon {
-        margin: 0;
-        padding: 0;
-        color:#ff0000 ;
-        float: right;
-        display: block;
-        border-radius: 5px;
-      }
-      &:active {
-        color: #ffffff;
-      }
-      &:hover {
-        color: #ffffff;
-      }
+    flex-direction: column;
+    padding: 15px 0;
+    .element{
+      display: none;
     }
     .header-logo{
       img{
         width: 103px;
-       
+      }
+    }
+    .box-icon{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .icon {
+        background-color: white;
+        color:#ff0000 ;
+        display: block;
+        border-radius: 5px;
+        i{
+          font-size: 22px;
+        }
       }
     }
   }
   .topnav.responsive {
-    display: block;
-    align-items: baseline;
-    position: relative;
-    .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-      padding: 5px;
-    }
-    a {
-      // float: none;
+    .element {
       display: block;
-      // text-align: left;
+      color: white;
+      font-weight: 700;
+      border-bottom: 0.5px solid;
     }
-    .main-navbar {
-      margin-top: 30px;
+    .main-navbar{
+      display: block;
       display: flex;
       flex-direction: column;
+      background-color: #232323;
+      border-radius: 5px;
+      width: 86%;
+      position: absolute;
+      left: 29px;
+      z-index: 10;
+      opacity: 0.9;
+      height: 94%;
+      gap: 10px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .topnav.responsive{
+    a{
+      font-size: 16px;
     }
   }
 }
 @media screen and (max-width: 540px) {
-  
-body{
-  padding: 0 30px;
-  border: 2px solid green;
-}
-  .topnav {
-    a {
-      display: none;
-      a.icon {
-        float: right;
-        display: block;
-       
-      }
-    }
-    
-  }
   
 }
 
