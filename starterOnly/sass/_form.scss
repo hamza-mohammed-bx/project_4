@@ -18,6 +18,19 @@
 .formData[data-error-visible=true] .text-control {
   border: 2px solid #e54858;
 }
+.formData.success input {
+  border-color: #09c372;
+}
+
+.formData.error input {
+  border-color: #ff3860;
+}
+
+.formData .error {
+  color: #ff3860;
+  font-size: 12px;
+  height: 13px;
+}
 
 /* 
 input[data-error]::after {
