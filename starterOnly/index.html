@@ -22,11 +22,13 @@
     </div>
     <div class="main-navbar">
       <span class="close-nav close"></span>
-      <a href="#" class="active element"><span>Accueil</span></a>
-      <a href="#" class="element"><span>Détails de l'évènement</span></a>
-      <a href="#" class="element"><span>À propos</span></a>
-      <a href="#" class="element"><span>Contact</span></a>
-      <a href="#" class="element"><span>Évènements passés</span></a>
+      <div class="elemnt-responsive">
+        <a href="#" class="active element"><span>Accueil</span></a>
+        <a href="#" class="element"><span>Détails de l'évènement</span></a>
+        <a href="#" class="element"><span>À propos</span></a>
+        <a href="#" class="element"><span>Contact</span></a>
+        <a href="#" class="element"><span>Évènements passés</span></a>
+      </div>
     </div>
   </div>
   </div>
@@ -53,7 +55,7 @@
       </button>
     </div>
 
-    <div class="bground">
+    <div class="bground bground-nav">
       <div class="content">
         <span class="close-modal close"></span>
         <div class="modal-body">
@@ -63,7 +65,7 @@
               <input class="text-control" type="text" id="first" name="first" /><br>
               <div class="error"></div>
             </div>
-            <div class="formData">
+            <div class="formData ">
               <label>Nom</label><br>
               <input class="text-control" type="text" id="last" name="last"  /><br>
               <div class="error"></div>
@@ -75,16 +77,16 @@
             </div>
             <div class="formData">
               <label>Date de naissance</label><br>
-              <input class="text-control" type="date" id="birthdate" name="birthdate" /><br>
+              <input class="text-control" type="date" id="birthdate" name="birthdate"  /><br>
               <div class="error"></div>
             </div>
-            <div class="formData">
+            <div class="formData ">
               <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99"/>
+              <input type="number" class="text-control" id="quantity" name="quantity" />
               <div class="error"></div>
             </div>
             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
-            <div class="formData">
+            <div class="formData formChekbox">
               <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"/>
               <label class="checkbox-label" for="location1">
                 <span class="checkbox-icon"></span>
@@ -109,19 +111,22 @@
               <label class="checkbox-label" for="location6">
                 <span class="checkbox-icon"></span>
                 Portland</label>
+              <div class="error"></div>
             </div>
             <div class="formData">
-              <input class="checkbox-input" type="checkbox" id="checkbox1" checked/>
-              <label class="checkbox2-label" for="checkbox1" required>
+              <input class="checkbox-input" type="checkbox" id="checkbox1" />
+              <label class="checkbox2-label" for="checkbox1" >
                 <span class="checkbox-icon"></span>
                 J'ai lu et j'accepte les conditions d'utilisation.
               </label>
+              <div class="error"></div>
               <br>
               <input class="checkbox-input" type="checkbox" id="checkbox2"/>
               <label class="checkbox2-label" for="checkbox2">
                 <span class="checkbox-icon"></span>
                 Je souhaite être prévenu des prochains évènements.
               </label>
+              <div class="error"></div>
               <br>
             </div>
             <input class="btn-submit" type="submit" class="button" value="C'est parti"/>

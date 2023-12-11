@@ -24,21 +24,77 @@
     display: none;
   }
   .main-navbar {
-    display: flex !important;
+    display: flex ;
     float: right;
   }
 }
-@media screen and (max-width: 1180px){
+
+// //Smartwatches devices
+// @media screen and (max-width: 320px){
+//   body{
+//     background-color: violet;
+//   }
+// }
+
+// //Smaller devices devices
+// @media  screen and (max-width: 420px){
+//   body{
+//     background-color:orange;
+//   }
+  
+//   .main-navbar{
+//     height: 113%;
+//   }
+// }
+
+// //phone devices
+// @media screen and (max-width: 600px){
+//   body{
+//     background-color:red;
+//   }
+// }
+
+// // Tablets and Large Phones
+// @media screen and (max-width: 667px){
+//   .main-navbar{
+//     width: 91% !important;
+//   }
+// }
+
+// @media screen and (max-width: 896px){
+//   .main-navbar{
+//     width: 95% !important;
+//   }
+// }
+// // Tablets 
+// @media screen and (min-width: 768px){
+  
+// }
+
+
+
+@media  screen and (max-width: 1181px){
   body{
     padding: 0 30px;
-    border: 2px solid green;
-  }
+  
   .topnav {
     display: flex;
     flex-direction: column;
     padding: 15px 0;
-    .element{
+    .main-navbar{
       display: none;
+    }
+    .elemnt-responsive{
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .element{
+        border-bottom: 1px solid white;
+        color: white;
+        font-size: 14px;
+        letter-spacing : 2px,
+      }
     }
     .header-logo{
       img{
@@ -60,7 +116,6 @@
       }
     }
   }
-  .topnav.responsive {
     .element {
       display: block;
       color: white;
@@ -78,7 +133,7 @@
       left: 29px;
       z-index: 10;
       opacity: 0.9;
-      height: 94%;
+      height: 300%;
       gap: 10px;
     }
   }
@@ -90,7 +145,5 @@
     }
   }
 }
-@media screen and (max-width: 540px) {
-  
-}
+
 
