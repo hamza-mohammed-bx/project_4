@@ -56,8 +56,8 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 modalIcon.addEventListener("click", stopModal);
 
 // *************** submit form ***************//
-const emailRe = /^[a-z0-9._-]+@[a-z0-9]{2,}\.[a-z]{2,6}$/;
-const dateRe = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+const emailRe = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9]{2,}\.[a-zA-Z]{2,6}$/;
+const dateRe = /\b(0[1-9]|[12]\d|3[01])[-/](0[1-9]|1[0-2])[-/](19\d\d|20\d\d)\b/;
 let errorsLimit;
 
 //////////////////////////////////////////////////////////////////////   Submit form    //////////////////////////////////////////////////////////////////////
