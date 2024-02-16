@@ -7,7 +7,7 @@ const navBtnClos = document.querySelectorAll(".close-nav");
 const navIcon = document.querySelectorAll(".icon");
 const bgNav = document.querySelector(".bground-nav");
 // *************** nav menu responsive  event ***************//
-let editNav = () => {
+const editNav = () => {
 	if (changNav.className === "topnav") {
 		// verification class name
 		launcNav();
@@ -16,11 +16,11 @@ let editNav = () => {
 	}
 };
 
-let launcNav = () => {
+const launcNav = () => {
 	navBar.style.display = "flex";
 	changNav.className += " responsive"; // add class name  ".topnav.responsive"
 };
-let stopNav = () => {
+const stopNav = () => {
 	navBar.style.display = "none";
 	changNav.className = "topnav";
 };
@@ -35,18 +35,18 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalIcon = document.querySelector(".close-modal");
-let modalContent = document.querySelector(".content");
-let modalBody = document.querySelector(".modal-body");
+const modalContent = document.querySelector(".content");
+const modalBody = document.querySelector(".modal-body");
 
 // *************** modal event ***************//
 // function launch modal form
-let launchModal = () => {
+const launchModal = () => {
 	modalbg.style.display = "block";
 	modalBody.style.display = "block";
 };
 
 // function close  modal form
-let stopModal = () => {
+const stopModal = () => {
 	modalbg.style.display = "none";
 };
 // launch modal event
@@ -63,18 +63,16 @@ let errorsLimit;
 //////////////////////////////////////////////////////////////////////   Submit form    //////////////////////////////////////////////////////////////////////
 document.querySelector("form").addEventListener("submit", (e) => {
 	e.preventDefault();
-  errorsLimit = document.querySelectorAll('.formData').length; // parce que prenom et lastname est verifier en meme temps
-  document.querySelectorAll('.error').forEach(input => console.log(input.name))
+    errorsLimit = document.querySelectorAll('.formData').length; // parce que prenom et lastname est verifier en meme temps
 	checkInput();
 	const checkedRadioButton = document.querySelector("input[name='location']:checked");
 	checkedRadioButton ? result(checkedRadioButton) : result(checkedRadioButton, "Vous devez choisir une ville.");
 	const condition = document.querySelector("#checkbox1:checked");
 	condition ? result(condition) : result(condition, "Vous devez vérifier que vous acceptez les termes et conditions.", 'checkbox1');
 	if (errorsLimit === 0) formulaireValide();
-  console.log("🚀 ~ document.querySelector ~ errorsLimit: fin", errorsLimit)
 });
 
-let result = (element, messageError, typeCheckbox) => {
+const result = (element, messageError, typeCheckbox) => {
 	if (!element) {
     element = typeCheckbox === 'checkbox1' ? document.getElementById('checkbox1') : document.querySelector("input[name='location'");
   }
@@ -94,7 +92,7 @@ let result = (element, messageError, typeCheckbox) => {
 
 //////////////////////////////////////////////////////////////////////   Check  Input  //////////////////////////////////////////////////////////////////////
 // ******* function check Input  *****//
-let checkInput = () => {
+const checkInput = () => {
 	document.querySelectorAll("input").forEach((input) => {
 		if (input.name === "first") {
 			if (input.value.trim() && input.value.length >= 2) return result(input);
@@ -116,10 +114,11 @@ let checkInput = () => {
 		}
 
 		if (input.name === "quantity") {
-			if (input.value != "" && input.value < 100) return result(input);
+			if (input.value != "" && input.value < 100 && input.value > 0) return result(input);
 			else {
 				if (input.value === "") return result(input, "Veuillez saisir un nombre ");
-				if (input.value > 99) return result(input, " le nombre doit etre inferieure à 99  ");
+				if (input.value > 99) return result(input, " le nombre doit etre inferieure à 99");
+				if (Math.sign(input.value) === -1) return result(input, "Veuillez saisir un nombre positif ");
 			}
 		}
 	});
@@ -129,16 +128,16 @@ let checkInput = () => {
 
 function formulaireValide() {
   document.querySelector("form").reset();
-	let displayConfirm = modalBody.cloneNode();
+	const displayConfirm = modalBody.cloneNode();
 	modalBody.after(displayConfirm);
 	displayConfirm.style.display = "flex";
 	modalBody.style.display = "none";
 	displayConfirm.classList.add("display-confirm"); // add a new class
 
 	// creation a new elements  in body
-	let btnConfirm = document.createElement("button");
-	let textBtn = document.createTextNode("Fermer");
-	let textConfirm = document.createTextNode("Merci pour votre inscription");
+	const btnConfirm = document.createElement("button");
+	const textBtn = document.createTextNode("Fermer");
+	const textConfirm = document.createTextNode("Merci pour votre inscription");
 	btnConfirm.appendChild(textBtn);
 	displayConfirm.appendChild(textConfirm);
 	displayConfirm.appendChild(btnConfirm);
